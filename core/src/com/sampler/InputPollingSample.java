@@ -30,7 +30,7 @@ public class InputPollingSample implements ApplicationListener {
 
 	@Override
 	public void resize(int width, int height) {
-		viewport.update(width, height);
+		viewport.update(width, height, true);
 	}
 
 	@Override
@@ -54,6 +54,31 @@ public class InputPollingSample implements ApplicationListener {
 		
 		boolean leftPressed = Gdx.input.isButtonPressed(Input.Buttons.LEFT);
 		boolean rightPressed = Gdx.input.isButtonPressed(Input.Buttons.RIGHT);
+		
+		font.draw(batch, 
+				"Mouse/Touch : x = "+ mouseX + " y = " + mouseY,
+				20f, 
+				720 - 20f);
+		font.draw(batch, 
+				leftPressed ? "Left button pressed" : "Left button not pressed",
+				20f, 
+				720 - 50f);
+		font.draw(batch, 
+				rightPressed ? "Right button pressed" : "Right button not pressed",
+				20f, 
+				720 - 80f);
+	
+		boolean wPressed = Gdx.input.isKeyPressed(Input.Keys.W);
+		boolean sPressed = Gdx.input.isKeyPressed(Input.Keys.S);
+
+		font.draw(batch, 
+				wPressed ? "W button pressed" : "W button not pressed",
+				20f, 
+				720 - 110f);
+		font.draw(batch, 
+				sPressed ? "S button pressed" : "S button not pressed",
+				20f, 
+				720 - 140f);
 	}
 
 	@Override
