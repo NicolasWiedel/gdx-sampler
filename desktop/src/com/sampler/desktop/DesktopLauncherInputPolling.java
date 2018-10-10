@@ -2,7 +2,7 @@ package com.sampler.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.sampler.GdxSamplerGame;
+import com.sampler.GdxGenerateSample;
 import com.sampler.InputPollingSample;
 
 public class DesktopLauncherInputPolling {

@@ -16,25 +16,26 @@ import com.badlogic.gdx.utils.reflect.Field;
 import com.badlogic.gdx.utils.reflect.Method;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.sampler.utils.GdxUtils;
 
 public class GdxReflectionSample implements ApplicationListener {
-	
+
 	private static final Logger log = new Logger(GdxReflectionSample.class.getName(), Logger.DEBUG);
 
 	private OrthographicCamera camera;
 	private Viewport viewport;
 	private SpriteBatch batch;
 	private BitmapFont font;
-	
+
 	@Override
 	public void create() {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
-		
+
 		camera = new OrthographicCamera();
 		viewport = new FitViewport(1080, 720, camera);
 		batch = new SpriteBatch();
 		font = new BitmapFont(Gdx.files.internal("fonts/oswald-32.fnt"));
-		
+
 		debugReflection(GdxReflectionSample.class);
 	}
 
@@ -46,54 +47,37 @@ public class GdxReflectionSample implements ApplicationListener {
 	@Override
 	public void render() {
 		// clear screen
-		Gdx.gl.glClearColor(0, 0, 0, 1.0f);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		
-		
+		GdxUtils.clearScreen();
+
 	}
-	
-	private void draw(){
+
+	private void draw() {
 		// mouse / touch input x/y
 		int mouseX = Gdx.input.getX();
 		int mouseY = Gdx.input.getY();
-		
+
 		boolean leftPressed = Gdx.input.isButtonPressed(Input.Buttons.LEFT);
 		boolean rightPressed = Gdx.input.isButtonPressed(Input.Buttons.RIGHT);
-		
-		font.draw(batch, 
-				"Mouse/Touch : x = "+ mouseX + " y = " + mouseY,
-				20f, 
-				720 - 20f);
-		font.draw(batch, 
-				leftPressed ? "Left button pressed" : "Left button not pressed",
-				20f, 
-				720 - 50f);
-		font.draw(batch, 
-				rightPressed ? "Right button pressed" : "Right button not pressed",
-				20f, 
-				720 - 80f);
+
+		font.draw(batch, "Mouse/Touch : x = " + mouseX + " y = " + mouseY, 20f, 720 - 20f);
+		font.draw(batch, leftPressed ? "Left button pressed" : "Left button not pressed", 20f, 720 - 50f);
+		font.draw(batch, rightPressed ? "Right button pressed" : "Right button not pressed", 20f, 720 - 80f);
 		// key input
 		boolean wPressed = Gdx.input.isKeyPressed(Input.Keys.W);
 		boolean sPressed = Gdx.input.isKeyPressed(Input.Keys.S);
 
-		font.draw(batch, 
-				wPressed ? "W button pressed" : "W button not pressed",
-				20f, 
-				720 - 110f);
-		font.draw(batch, 
-				sPressed ? "S button pressed" : "S button not pressed",
-				20f, 
-				720 - 140f);
+		font.draw(batch, wPressed ? "W button pressed" : "W button not pressed", 20f, 720 - 110f);
+		font.draw(batch, sPressed ? "S button pressed" : "S button not pressed", 20f, 720 - 140f);
 	}
 
 	@Override
 	public void pause() {
-		
+
 	}
 
 	@Override
 	public void resume() {
-		
+
 	}
 
 	@Override
@@ -101,23 +85,24 @@ public class GdxReflectionSample implements ApplicationListener {
 		batch.dispose();
 		font.dispose();
 	}
-	
+
 	public static void debugReflection(Class<?> clazz) {
-		Field[] fields = ClassReflection.getDeclaredFields(clazz); 
+		Field[] fields = ClassReflection.getDeclaredFields(clazz);
 		Method[] methods = ClassReflection.getDeclaredMethods(clazz);
-		
+
 		log.debug("== debug reflection class = " + clazz.getName());
-		
+
 		log.debug("fields-count = " + fields.length);
-		for( Field field : fields) {
+		for (Field field : fields) {
 			log.debug("filedname = " + field.getName() + " fieldtype = " + field.getType());
 		}
-		
+
 		log.debug("method-count = " + methods.length);
 		for (Method method : methods) {
-			log.debug("methodname = " + method.getName() + " methodparametertypes = " + Arrays.asList(method.getParameterTypes()));
+			log.debug("methodname = " + method.getName() + " methodparametertypes = "
+					+ Arrays.asList(method.getParameterTypes()));
 		}
-		
+
 		log.debug("=====");
 	}
 }

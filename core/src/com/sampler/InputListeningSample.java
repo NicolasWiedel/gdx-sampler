@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.sampler.utils.GdxUtils;
 
 public class InputListeningSample implements ApplicationListener, InputProcessor {
 	
@@ -47,8 +48,7 @@ public class InputListeningSample implements ApplicationListener, InputProcessor
 	@Override
 	public void render() {
 		// clear screen
-		Gdx.gl.glClearColor(0, 0, 0, 1.0f);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		GdxUtils.clearScreen();
 		
 		batch.setProjectionMatrix(camera.combined);	
 		batch.begin();
