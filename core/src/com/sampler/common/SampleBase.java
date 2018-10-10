@@ -3,92 +3,78 @@ package com.sampler.common;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.InputProcessor;
 
-public class SampleBase implements ApplicationListener, InputProcessor{
+/**
+ * Created by goran on 20/08/2016.
+ */
+public class SampleBase implements ApplicationListener, InputProcessor {
 
-	@Override
-	public void create() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void create() {
 
-	@Override
-	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
-		
-	}
+    }
 
-	@Override
-	public void render() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void resize(int width, int height) {
 
-	@Override
-	public void pause() {
-		// TODO Auto-generated method stub
-		
-	}
+    }
 
-	@Override
-	public void resume() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void render() {
 
-	@Override
-	public void dispose() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public boolean keyDown(int keycode) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    }
 
-	@Override
-	public boolean keyUp(int keycode) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public void pause() {
 
-	@Override
-	public boolean keyTyped(char character) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    }
 
-	@Override
-	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public void resume() {
 
-	@Override
-	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    }
 
-	@Override
-	public boolean touchDragged(int screenX, int screenY, int pointer) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public void dispose() {
 
-	@Override
-	public boolean mouseMoved(int screenX, int screenY) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    }
 
-	@Override
-	public boolean scrolled(int amount) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public boolean keyDown(int keycode) {
+        return false;
+    }
 
-	
+    @Override
+    public boolean keyUp(int keycode) {
+        return false;
+    }
 
+    @Override
+    public boolean keyTyped(char character) {
+        return false;
+    }
+
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        return false;
+    }
+
+    @Override
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        return false;
+    }
+
+    @Override
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        return false;
+    }
+
+    @Override
+    public boolean mouseMoved(int screenX, int screenY) {
+        return false;
+    }
+
+    @Override
+    public boolean scrolled(int amount) {
+        return false;
+    }
 }

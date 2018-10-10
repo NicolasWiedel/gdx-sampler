@@ -11,7 +11,7 @@ public class ApplicationListernerSample extends SampleBase {
 
 	private static final Logger log = new Logger(ApplicationListernerSample.class.getName(), Logger.DEBUG);
 	
-	public static final SampleInfo SAMPLE_INFO = new SampleInfo(ApplicationListenerSample.class)
+	public static final SampleInfo SAMPLE_INFO = new SampleInfo(ApplicationListenerSample.class);
 	
 	private boolean renderInterrupted = true;
 	

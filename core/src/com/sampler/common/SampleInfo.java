@@ -1,21 +1,23 @@
 package com.sampler.common;
 
-public class SampleInfo extends SampleBase{
+/**
+ * Created by goran on 20/08/2016.
+ */
+public class SampleInfo {
 
-	private final String name;
-	private final Class<? extends SampleBase> clazz;
-	
-	public SampleInfo(Class<? extends SampleBase> clazz){
-		this.clazz = clazz;
-		name = clazz.getSimpleName();
-	}
+    private final String name;
+    private final Class<? extends SampleBase> clazz;
 
-	public String getName() {
-		return name;
-	}
+    public SampleInfo(Class<? extends SampleBase> clazz) {
+        this.clazz = clazz;
+        name = clazz.getSimpleName();
+    }
 
-	public Class<? extends SampleBase> getClazz() {
-		return clazz;
-	}
-	
+    public String getName() {
+        return name;
+    }
+
+    public Class<?> getClazz() {
+        return clazz;
+    }
 }
