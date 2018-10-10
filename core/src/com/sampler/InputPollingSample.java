@@ -10,9 +10,10 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.sampler.common.SampleBase;
 import com.sampler.utils.GdxUtils;
 
-public class InputPollingSample implements ApplicationListener {
+public class InputPollingSample extends SampleBase {
 
 	private OrthographicCamera camera;
 	private Viewport viewport;

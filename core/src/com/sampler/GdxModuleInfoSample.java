@@ -4,8 +4,9 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Logger;
+import com.sampler.common.SampleBase;
 
-public class GdxModuleInfoSample implements ApplicationListener {
+public class GdxModuleInfoSample extends SampleBase {
 
 	private static final Logger log = new Logger(GdxModuleInfoSample.class.getName(), Logger.DEBUG);
 	

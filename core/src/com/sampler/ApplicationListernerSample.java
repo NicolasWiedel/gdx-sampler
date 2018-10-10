@@ -4,8 +4,9 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Logger;
+import com.sampler.common.SampleBase;
 
-public class ApplicationListernerSample implements ApplicationListener {
+public class ApplicationListernerSample extends SampleBase {
 
 	private static final Logger log = new Logger(ApplicationListernerSample.class.getName(), Logger.DEBUG);
 	
