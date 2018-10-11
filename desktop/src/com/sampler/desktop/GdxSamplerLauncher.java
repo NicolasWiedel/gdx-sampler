@@ -69,6 +69,7 @@ public class GdxSamplerLauncher extends JFrame {
         setMinimumSize(new Dimension(WIDTH, HEIGHT));
         setSize(WIDTH, HEIGHT);
         setResizable(false);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // tell window (jframe) to resize and layout our components
